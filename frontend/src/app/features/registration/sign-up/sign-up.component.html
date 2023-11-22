@@ -1,4 +1,15 @@
 <div class="container">
   <app-registration-navbar></app-registration-navbar>
-  <p>sign-up works!</p>
+  <div class="form-container">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+      <h2>Create New Account</h2>
+      <label for="name">Full Name</label>
+      <input type="text" name="name" id="name" placeholder="Your Full Name" class="signup-input" formControlName="name">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="youremail@gmail.com" class="signup-input" formControlName="email">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="Your Password" class="signup-input" formControlName="password">
+      <input type="submit" value="Create Account" class="submit-signup">
+    </form>
+  </div>
 </div>
