@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  padding: 0 5px;
+  background-color: #343434;
+  color: white;
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+  button {
+    margin-left: 5px;
+  }
+  .buttons-container {
+    margin-right: 10px;
+  }
+}

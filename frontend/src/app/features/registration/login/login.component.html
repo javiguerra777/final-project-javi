@@ -1,1 +1,13 @@
-<p>login works!</p>
+<div class="container">
+  <app-registration-navbar></app-registration-navbar>
+  <div class="form-container">
+    <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
+      <h2>Login</h2>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" class="login-input" placeholder="youremail@gmail.com" formControlName="email">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" class="login-input" placeholder="Your Password" formControlName="password">
+      <input type="submit" value="Login" class="submit-login">
+    </form>
+  </div>
+</div>

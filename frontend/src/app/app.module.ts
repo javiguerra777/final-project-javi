@@ -14,13 +14,13 @@ import { MatInputModule } from "@angular/material/input";
 import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { LandingPageComponent } from './features/landing-page/landing-page.component';
-import { RegistrationNavbarComponent } from './shared/registration-navbar/registration-navbar.component';
+import { SharedModule } from './shared/shared.module';
+import { RegistrationModule } from './features/registration/registration.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    RegistrationNavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,9 @@ import { RegistrationNavbarComponent } from './shared/registration-navbar/regist
     MatListModule,
     MatToolbarModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    RegistrationModule,
   ],
   bootstrap: [AppComponent]
 })
