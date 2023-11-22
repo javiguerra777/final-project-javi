@@ -1,0 +1,32 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(123,117,219);
+  background: linear-gradient(180deg, rgba(123,117,219,1) 0%, rgba(120,120,201,1) 31%, rgba(111,111,227,1) 50%, rgba(87,87,199,1) 70%);
+  .card {
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    @media screen and (min-width: 800px) {
+      width: 600px;
+      
+    }
+    h1 {
+      text-align: center;
+      font-size: 32px;
+    }
+    .description {
+      font-size: 20px;
+      text-align: center;
+    }
+    .my-btn {
+      margin-top: 10px;
+    }
+  }
+}

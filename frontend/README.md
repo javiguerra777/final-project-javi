@@ -1,15 +1,28 @@
-
-There are a few bugs in the code I am trying to workout, but the login works.
-For some reason I keep getting an error 401 code saying the logged in user is not authenticatedgit 
-# Posts
+# Project Management Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
-## Development server
+## Overview
+
+This is the client-side application for a project management system. It is built with Angular and communicates with a backend server for data.
+
+## Features
+
+- Create, update, and delete projects
+- Assign tasks to team members
+- Track project progress
+
+## Installation
+
+1. Install Dependencies
+```npm install```
+
+
+## Running the Application
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Code Scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
@@ -17,14 +30,16 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Testing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To run the tests for the client:
+```ng test```
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contributing
 
-## Further help
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<!-- ## License
+
+[ISC](https://choosealicense.com/licenses/isc/) -->
