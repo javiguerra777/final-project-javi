@@ -15,9 +15,13 @@
 }
 .card {
   background-color: #E5E4E2;
+  height: auto;
+  padding-bottom: 10px;
   max-height: 400px;
   margin: 0 40px;
   min-width: 300px;
   border-radius: 5px;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }

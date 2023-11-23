@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 type Project = {
   name: string;
@@ -11,10 +12,16 @@ type Project = {
 })
 export class ProjectItemComponent implements OnInit {
   @Input() project!: Project;
+  taskForm = new FormGroup({
+    task: new FormControl(''),
+  });
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  submitTask() {
+   this.project.projects.push(this.taskForm.value.task);
+   this.taskForm.reset();
+  }
 }
