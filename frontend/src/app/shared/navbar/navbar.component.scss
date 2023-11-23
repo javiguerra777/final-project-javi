@@ -1,0 +1,26 @@
+nav {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #343434;
+  height: 50px;
+  color: white;
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 5px;
+    @media screen and (min-width: 800px) {
+      font-size: 24px;
+    }
+  }
+  a:hover {
+    color: #b3b3b3;
+    text-decoration: underline;
+  }
+  button {
+    margin-right: 10px;
+  }
+}

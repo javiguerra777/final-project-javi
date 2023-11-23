@@ -13,11 +13,12 @@ export class SignUpComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
   });
-  constructor(private route: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   onSubmit() {
     console.log(this.signupForm.value);
+    this.router.navigate(['my/projects/dashboard']);
   }
 }

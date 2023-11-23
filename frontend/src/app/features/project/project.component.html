@@ -1,0 +1,8 @@
+<div class="container">
+  <app-navbar></app-navbar>
+  <div class="projects-container">
+    <div *ngFor="let item of projects" class="card">
+      <app-project-item [project]="item"></app-project-item>
+    </div>
+  </div>
+</div>

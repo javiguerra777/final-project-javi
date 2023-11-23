@@ -1,0 +1,38 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .add-project {
+    display: flex;
+    flex-direction: column;
+    background-color: #E5E4E2;
+    margin-top: 20px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    @media screen and (min-width: 800px) {
+      width: 500px;
+    }
+    label {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 32px;
+    }
+    .project-input {
+      padding: 2px;
+      font-size: 20px;
+      border-radius: 5px;
+      height: 35px;
+    }
+    .submit-project {
+      margin-top: 15px;
+    }
+  }
+}

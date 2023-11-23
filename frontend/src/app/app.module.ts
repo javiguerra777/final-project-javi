@@ -16,11 +16,19 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { LandingPageComponent } from './features/landing-page/landing-page.component';
 import { SharedModule } from './shared/shared.module';
 import { RegistrationModule } from './features/registration/registration.module';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { ProjectComponent } from './features/project/project.component';
+import { NotFoundComponent } from './features/not-found/not-found.component';
+import { ProjectItemComponent } from './features/project/project-item/project-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
+    DashboardComponent,
+    ProjectComponent,
+    NotFoundComponent,
+    ProjectItemComponent,
   ],
   imports: [
     BrowserModule,
