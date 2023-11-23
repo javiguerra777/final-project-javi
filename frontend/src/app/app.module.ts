@@ -20,6 +20,7 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { ProjectComponent } from './features/project/project.component';
 import { NotFoundComponent } from './features/not-found/not-found.component';
 import { ProjectItemComponent } from './features/project/project-item/project-item.component';
+import { UnauthorizedComponent } from './features/unauthorized/unauthorized.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProjectItemComponent } from './features/project/project-item/project-it
     ProjectComponent,
     NotFoundComponent,
     ProjectItemComponent,
+    UnauthorizedComponent,
   ],
   imports: [
     BrowserModule,

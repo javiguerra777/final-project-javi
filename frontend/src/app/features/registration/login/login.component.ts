@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.localStorageService.getData()
   }
   onSubmit() {
     const payload = {
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
         this.localStorageService.registerData(data);
         this.router.navigate(['my/projects/dashboard']);
       },
-      error: (error) => console.log(error),
+      error: (error) => console.error(error),
     });
   }
 }
