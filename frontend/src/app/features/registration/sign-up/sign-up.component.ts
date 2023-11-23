@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RegistrationService } from 'src/app/services/registration.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,12 +15,26 @@ export class SignUpComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
   });
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private registrationService: RegistrationService,
+    private localStorageService: LocalStorageService
+    ) { }
 
   ngOnInit(): void {
   }
   onSubmit() {
-    console.log(this.signupForm.value);
-    this.router.navigate(['my/projects/dashboard']);
+    const payload = {
+      name: this.signupForm.value.name,
+      email: this.signupForm.value.email,
+      password: this.signupForm.value.password,
+    };
+    this.registrationService.registerUser(payload).subscribe({
+      next: (data: any) => {
+        this.localStorageService.registerData(data);
+        this.router.navigate(['my/projects/dashboard']);
+      },
+      error: (error) => console.error(error),
+    });
   }
 }

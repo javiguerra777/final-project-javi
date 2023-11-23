@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class LocalStorageService {
   key = 'project-management-app';
   constructor() { }
-  getData(): any {
+  getData(): string | any {
     const item = localStorage.getItem(this.key);
     return JSON.parse(item || '');
   }
