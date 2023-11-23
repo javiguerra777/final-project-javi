@@ -13,6 +13,10 @@ This is the backend server for the Project Management App. It's built with Expre
 ```npm install```
 
 2. Create a `.env` file in the root of the `express-server` directory. This file should contain your environment variables:
+```DATABASE_URL = the database name you set up
+DATABASE_USERNAME = Your username for mysql
+DATABASE_PASSWORD = Your Password
+JWT_SECRET = your secret JWT```
 
 3. Run the database migrations:
 ```npx sequelize-cli db:migrate```
