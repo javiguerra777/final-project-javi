@@ -11,7 +11,10 @@ type Project = {
   styleUrls: ['./project-item.component.scss']
 })
 export class ProjectItemComponent implements OnInit {
-  @Input() project!: Project;
+  @Input() project: Project = {
+    name: '',
+    projects: [],
+  };
   taskForm = new FormGroup({
     task: new FormControl(''),
   });
