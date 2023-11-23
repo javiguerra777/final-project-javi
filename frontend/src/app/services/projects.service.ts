@@ -19,7 +19,7 @@ export class ProjectsService {
     private localStorageService: LocalStorageService,
     ) { }
     getProjects() {
-      if (!this.projectsData) {
+      if (this.projectsData === EMPTY) {
         this.loading.next(true);
         this.projectsData = this.http.get(getBaseApiUrl() + '/api/projects',  this.getHeaders())
         .pipe(
