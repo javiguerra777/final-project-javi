@@ -1,9 +1,9 @@
 <div class="container">
   <app-navbar></app-navbar>
   <div class="projects-container">
-      <div *ngFor="let item of projects">
+      <div *ngFor="let task of tasks | async">
         <div class="card">
-          <app-project-item [project]="item"></app-project-item>
+          <app-project-item [task]="task" [projectId]="projectId"></app-project-item>
         </div>
       </div>
   </div>

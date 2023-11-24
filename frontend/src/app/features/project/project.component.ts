@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable, switchMap, EMPTY } from 'rxjs';
+import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
   selector: 'app-project',
@@ -6,23 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
-  projects = [
-    {
-      name: 'todo',
-      projects: [],
-    },
-    {
-      name: 'in progress',
-      projects: [],
-    },
-    {
-      name: 'done',
-      projects: [],
-    }
-  ]
-  constructor() { }
+  tasks: Observable<any> = EMPTY;
+  projectId: number = 0;
+  constructor(
+    private tasksService: TasksService,
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.projectId = params['id'];
+    })
+    this.tasks = this.route.params.pipe(
+      switchMap((params) => {
+        const id = params['id'];
+        return this.tasksService.getTasksByProjectId(id);
+      })
+    );
   }
 
 }
