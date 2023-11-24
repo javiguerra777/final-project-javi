@@ -1,8 +1,10 @@
-<h2>{{task.name.toUpperCase()}}</h2>
-<div class="tasks-container">
-  <div *ngFor="let item of task.data">
-    {{item.name}}
-  </div>
-<form [formGroup]="taskForm" (submit)="submitTask()" class="add-task-form">
-  <input type="text" name="task" id="task" placeholder="Add Task" formControlName="task">
-</form>
+<div class="card">
+  <h2>{{task.name.toUpperCase()}}</h2>
+  <div class="tasks-container">
+    <div *ngFor="let item of task.data">
+      {{item.name}}
+    </div>
+  <form [formGroup]="taskForm" (submit)="submitTask()" class="add-task-form">
+    <input type="text" name="task" id="task" placeholder="Add Task" formControlName="task">
+  </form>
+</div>

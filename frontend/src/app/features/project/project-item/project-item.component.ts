@@ -33,8 +33,13 @@ export class ProjectItemComponent implements OnInit {
         status: this.task.name,
       },
     };
-    console.log(payload);
-    // this.tasksService.createNewTask().subscribe();
+    this.tasksService.createNewTask(payload).subscribe({
+      next: (data: any) => {
+        console.log(data);
+        this.task.data.push(data);
+      },
+      error: (error) => console.error(error),
+    });
    this.taskForm.reset();
   }
 }

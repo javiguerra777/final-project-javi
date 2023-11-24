@@ -16,9 +16,10 @@
       </button>
     </form>
     <div class="projects-container">
+      <h2>Your Work Spaces</h2>
       <div *ngFor="let item of projects" class="project">
       <p>{{item.title}}</p>
-      <a [routerLink]="['/my/project', item.id]">View Project</a>
+      <a [routerLink]="['/my/project', item.id]">View Project ></a>
       </div>
     </div>
   </div>
