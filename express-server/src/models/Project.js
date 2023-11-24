@@ -1,6 +1,7 @@
 const db = require('../db/database.js');
 const { DataTypes } = require('sequelize');
 const User = require('./User.js');
+const Task = require('./Task.js');
 
 const Project = db.define('Project', {
   title: { 
@@ -16,5 +17,6 @@ const Project = db.define('Project', {
     }
   }
 });
+Project.hasMany(Task, {foreignKey: 'projectId'});
 
 module.exports = Project;
