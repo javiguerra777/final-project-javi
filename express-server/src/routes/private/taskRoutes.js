@@ -5,7 +5,33 @@ const router = express.Router();
 router.get('/tasks/:projectId', async (req, res) => {
   try {
     const tasks = await Task.findAll({ where: { userId: req.user.id, projectId: req.params.projectId }});
-    res.status(200).json(tasks);
+    const organizedTasks = tasks.reduce((acc, task) => {
+      if (task.status === 'todo') {
+        acc[0].data.push(task);
+      } else if (task.status === 'in-progress') {
+        acc[1].data.push(task);
+      } else if (task.status === 'complete') {
+        acc[2].data.push(task);
+      }
+      return acc;
+    }, [
+      {
+        id: 1,
+        name: 'todo',
+        data: []
+      },
+      {
+        id: 2,
+        name: 'in-progress',
+        data: []
+      },
+      {
+        id: 3,
+        name: 'complete',
+        data: []
+      }
+    ]);
+    res.status(200).json(organizedTasks);
   } catch(err){
     console.log(err);
     res.status(500).send({ message: err.message });
