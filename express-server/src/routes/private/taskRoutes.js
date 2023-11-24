@@ -8,7 +8,7 @@ router.get('/tasks/:projectId', async (req, res) => {
     const organizedTasks = tasks.reduce((acc, task) => {
       if (task.status === 'todo') {
         acc[0].data.push(task);
-      } else if (task.status === 'in-progress') {
+      } else if (task.status === 'in progress') {
         acc[1].data.push(task);
       } else if (task.status === 'complete') {
         acc[2].data.push(task);
@@ -22,7 +22,7 @@ router.get('/tasks/:projectId', async (req, res) => {
       },
       {
         id: 2,
-        name: 'in-progress',
+        name: 'in progress',
         data: []
       },
       {
