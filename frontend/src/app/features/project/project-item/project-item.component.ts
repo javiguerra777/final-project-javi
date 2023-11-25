@@ -42,4 +42,19 @@ export class ProjectItemComponent implements OnInit {
     });
    this.taskForm.reset();
   }
+  editTask(id: number) {
+    console.log(id);
+  }
+  deleteTask(id: number) {
+    const confirmed = confirm('Are you sure you want to delete this task?');
+    if(confirmed) {
+      this.tasksService.deleteTask(id).subscribe({
+        next: (data: any) => {
+          console.log(data);
+          this.task.data = this.task.data.filter((task) => task.id !== id);
+        },
+        error: (error) => console.error(error),
+      });
+    }
+  }
 }
