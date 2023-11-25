@@ -35,11 +35,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 To run the tests for the client:
 ```ng test```
 
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
 <!-- ## License
 
 [ISC](https://choosealicense.com/licenses/isc/) -->

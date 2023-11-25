@@ -14,3 +14,7 @@ This is a full-stack application for managing projects. The backend is built wit
 ```git clone https://github.com/javiguerra777/final-project-javi.git```
 2. Install backend dependencies, checkout the express-server directory for more information on how to install and set up project
 3. Install frontend dependencies, checkout the frontend directory for more information on how to install and set up project
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
