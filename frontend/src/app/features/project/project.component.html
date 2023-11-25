@@ -2,7 +2,10 @@
   <app-navbar></app-navbar>
   <div class="projects-container">
       <div *ngFor="let task of tasks | async">
-        <app-project-item [task]="task" [projectId]="projectId"></app-project-item>
+        <app-project-item [task]="task" [projectId]="projectId" (setActiveTask)="onEditTask($event)"></app-project-item>
       </div>
   </div>
+</div>
+<div *ngIf="activeTask !== null">
+<app-edit-task [task]="activeTask" [projectId]="projectId" (setActiveTask)="onClearActiveTask($event)"></app-edit-task>
 </div>

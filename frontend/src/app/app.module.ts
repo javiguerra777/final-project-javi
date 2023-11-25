@@ -21,6 +21,7 @@ import { ProjectComponent } from './features/project/project.component';
 import { NotFoundComponent } from './features/not-found/not-found.component';
 import { ProjectItemComponent } from './features/project/project-item/project-item.component';
 import { UnauthorizedComponent } from './features/unauthorized/unauthorized.component';
+import { EditTaskComponent } from './features/project/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { UnauthorizedComponent } from './features/unauthorized/unauthorized.comp
     NotFoundComponent,
     ProjectItemComponent,
     UnauthorizedComponent,
+    EditTaskComponent,
   ],
   imports: [
     BrowserModule,

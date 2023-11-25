@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TasksService } from 'src/app/services/tasks.service';
-import type { OrganizedTask } from 'src/app/models/task.model';
+import type { OrganizedTask, Task } from 'src/app/models/task.model';
 
 @Component({
   selector: 'app-project-item',
@@ -18,6 +18,7 @@ export class ProjectItemComponent implements OnInit {
   taskForm = new FormGroup({
     task: new FormControl(''),
   });
+  @Output() setActiveTask = new EventEmitter<any>();
 
   constructor(
     private tasksService: TasksService,
@@ -42,8 +43,8 @@ export class ProjectItemComponent implements OnInit {
     });
    this.taskForm.reset();
   }
-  editTask(id: number) {
-    console.log(id);
+  editTask(val: Task) {
+    this.setActiveTask.emit(val);
   }
   deleteTask(id: number) {
     const confirmed = confirm('Are you sure you want to delete this task?');

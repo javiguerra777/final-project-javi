@@ -1,0 +1,17 @@
+<div class="edit-task-container">
+  <div class="edit-task-card">
+    <div class="edit-task-header">
+      <h2>Edit Task</h2>
+      <button mat-raised-button color="warn" (click)="clearActiveTask()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <form [formGroup]="editTaskForm" (submit)="submitEditTask()" class="submit-edit-task">
+      <label for="task-name">Task Name</label>
+      <div class="row">
+        <input type="text" name="task-name" id="task-name" class="input-task" placeholder="Add Task" formControlName="name">
+        <button mat-raised-button color="primary" type="submit">Edit Task</button>
+      </div>
+    </form>
+  </div>
+</div>

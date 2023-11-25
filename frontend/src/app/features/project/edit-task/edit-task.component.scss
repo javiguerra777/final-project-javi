@@ -1,0 +1,52 @@
+.edit-task-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  .edit-task-card {
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+    padding: 5px;
+    @media screen and (min-width: 800px) {
+      width: 600px;
+    }
+    .edit-task-header {
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      h2 {
+        font-size: 24px;
+      }
+      button {
+        position: absolute;
+        right: 5px;
+      }
+    }
+    .submit-edit-task {
+      display: flex;
+      flex-direction: column;
+      label {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
+      .input-task {
+        height: 30px;
+        flex: 1;
+        margin-right: 3px;
+      }
+    }
+  }
+}
