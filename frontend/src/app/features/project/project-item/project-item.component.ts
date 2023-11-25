@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TasksService } from 'src/app/services/tasks.service';
 import type { OrganizedTask, Task } from 'src/app/models/task.model';
 
@@ -16,7 +16,7 @@ export class ProjectItemComponent implements OnInit {
   };
   @Input() projectId: number = 0;
   taskForm = new FormGroup({
-    task: new FormControl(''),
+    task: new FormControl('', [Validators.required]),
   });
   @Output() setActiveTask = new EventEmitter<any>();
 

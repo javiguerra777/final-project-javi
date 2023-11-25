@@ -11,15 +11,7 @@ import type { Task } from 'src/app/models/task.model';
 })
 export class ProjectComponent implements OnInit {
   tasks: Observable<any> = EMPTY;
-  activeTask: Task | null = {
-    "id": 8,
-    "name": "finish app",
-    "status": "todo",
-    "projectId": 1,
-    "userId": 1,
-    "createdAt": "2023-11-24T08:14:18.000Z",
-    "updatedAt": "2023-11-24T08:14:18.000Z"
-};
+  activeTask: Task | null = null;
   projectId: number = 0;
   constructor(
     private tasksService: TasksService,
