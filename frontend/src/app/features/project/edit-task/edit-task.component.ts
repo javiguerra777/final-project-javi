@@ -24,6 +24,7 @@ export class EditTaskComponent implements OnInit {
     name: new FormControl('', [Validators.required]),
     status: new FormControl('', [Validators.required]),
   });
+  taskStatus = ['todo', 'in progress', 'complete']
 
   constructor(
     private tasksService: TasksService,
@@ -35,8 +36,19 @@ export class EditTaskComponent implements OnInit {
       status: this.task.status,
     })
   }
+  get formTaskStatus() {
+    return this.editTaskForm.get('status')?.value;
+  }
+  isEqualToActiveFormStatus(val: string) {
+    return this.formTaskStatus === val;
+  }
   clearActiveTask() {
     this.setActiveTask.emit(null);
+  }
+  switchActiveStatus(status: string) {
+    this.editTaskForm.patchValue({
+      status: status,
+    });
   }
   submitEditTask() {
     const payload = {
@@ -44,7 +56,6 @@ export class EditTaskComponent implements OnInit {
       id: this.task.id,
       data: this.editTaskForm.value,
     };
-    console.log(payload);
     this.tasksService.updateTask(payload).subscribe({
       next: () => {
         this.setActiveTask.emit(null);

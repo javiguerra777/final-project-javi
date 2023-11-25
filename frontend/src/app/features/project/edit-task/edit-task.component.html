@@ -12,6 +12,11 @@
         <input type="text" name="task-name" id="task-name" class="input-task" placeholder="Add Task" formControlName="name">
         <button mat-raised-button color="primary" type="submit">Edit Task</button>
       </div>
+      <p class="status-description">Change Task Status</p>
+      <div *ngFor="let status of taskStatus" class="task-status-card" [ngClass]="{'active-task-status': isEqualToActiveFormStatus(status)}" (click)="switchActiveStatus(status)">
+        <p>{{status.toUpperCase()}}</p>
+        <p *ngIf="isEqualToActiveFormStatus(status)">Selected</p>
+      </div>
     </form>
   </div>
 </div>
